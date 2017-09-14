@@ -1,4 +1,4 @@
-#Conner Greene's Web Application Excerice
+#Conner Greene's Web Application Exercise
 
 1. Make sure node is installed (https://nodejs.org/en/download/)
 
