@@ -1,0 +1,45 @@
+<div  ui-sref="album({albumId: album.id})" class="album-back" style="background-image:url({{ firstPhoto }}), url({{ secondPhoto }}), url({{ thirdPhoto }}), url({{ fourthPhoto }})">  
+</div>
+    <div ng-if="!edit">
+        <div class="album-tools">
+            <a class="btn" ng-click="toggleEdit()"><span class="glyphicon glyphicon-edit"></span></a>
+            <div ng-controller="deleteAlbumCntrl">
+                <a class="btn" ng-click="showModal = true">
+                  <span class="glyphicon glyphicon-trash"></span> 
+                </a>
+                <modal visible="showModal" on-show="modalOneShown()" on-hide="modalOneHide()">
+                  <modal-body>
+                    <div class="delete-text">
+                        Are you sure you want to delete <strong>{{ album.title }}</strong>?
+                    </div>
+                    <div class="modal-yes-no">
+                        <button ng-click="deleteAlbum(album)" class="modal-button">Yes</button>
+                        <button ng-click="close()" class="modal-button">No</button>
+                    </div>
+                  </modal-body>
+                </modal>
+            </div>
+        </div>
+        <div class="album-info" ui-sref="album({albumId: album.id})">
+            <p class="album-title">{{ album.title }}</p>
+            <p>{{ album.ownerName }}</p>
+            <p>{{ album.photoAmount }} photos</p>
+        </div>
+    </div>
+
+
+    <div ng-if="edit">
+        <div class="album-tools-edit">
+            <a class="btn" ng-click="cancelEdit()"><span class="glyphicon glyphicon-remove"></span></a>
+            <form ng-submit="update(album)" name="albumForm" id="album-form">
+                <button class="btn" type="submit">
+                    <span class="glyphicon glyphicon-floppy-disk"></span>
+                </button>
+                <input type="text" class="form-control input-sm" name="title" ng-model="album.title" placeholder="updateAlbum.title" required/>
+                <input type="text" class="album-name-form form-control input-sm"  name="ownerName" ng-model="album.ownerName" placeholder="updateAlbum.ownerName" required/>
+
+                <div style="color:red" class="owner-err" ng-show="err">{{ err }}</div>
+
+            </form>
+        </div>
+    </div>

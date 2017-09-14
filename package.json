@@ -1,0 +1,34 @@
+{
+  "name": "photo-viewer",
+  "version": "1.0.0",
+  "description": "Front-end dev exercise",
+  "main": "app.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-messages": "^1.6.4",
+    "angular-mocks": "^1.6.4",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^0.4.2",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jasmine-core": "^2.6.1",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-html-reporter": "^0.2.7",
+    "karma-jasmine": "^1.1.0",
+    "karma-spec-reporter": "^0.0.31",
+    "lightgallery.js": "^1.0.1",
+    "morgan": "^1.8.1",
+    "ng-file-upload": "^12.2.13",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "karma-mocha-reporter": "^2.2.3"
+  },
+  "scripts": {
+    "test": "karma start",
+    "start": "node server.js"
+  },
+  "author": "Conner Greene",
+  "license": "ISC"
+}

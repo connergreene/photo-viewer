@@ -1,0 +1,43 @@
+<div>
+  <div class="albums-header">
+    <div ng-controller="newAlbumModalCntrl">
+      <button class="add-btn" ng-click="showModal = true">
+          <div class="button-text">
+            ADD ALBUM
+          </div> 
+          <span class="glyphicon glyphicon-plus button-symbol"></span>
+      </button>
+      <modal visible="showModal" on-show="modalOneShown()" on-hide="modalOneHide()">
+        <modal-header title="New Album"></modal-header>
+        <modal-body>
+          <form ng-submit="submit(newAlbum)" name="albumForm">
+          Album Title
+            <input type="text" class="form-control input-sm" name="title" ng-model="newAlbum.title" placeholder="Album Title" required/>
+            Owner Name
+            <input type="text" class="form-control input-sm"  name="ownerName" ng-model="newAlbum.ownerName" placeholder="Owner Name" required/>
+            <div style="color:red" ng-show="err">
+              {{ err }}
+            </div>
+            <input class="modal-button" type="Submit" value="Submit"/>
+          </form>
+        </modal-body>
+      </modal>
+    </div>
+    <h3>Albums</h3>
+    <div uib-dropdown is-open="status.isopen">
+      <button id="single-button" type="button" uib-dropdown-toggle ng-disabled="disabled">
+        {{choice}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li ng-repeat="choice in choices">
+          <a ng-click="setChoice(choice)">{{ choice }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+	<div class="album-thumb-container">
+		<div ng-repeat="album in albums | orderBy:propertyName:reverse" class="album-thumb">
+    		<album album="album"></album>
+		</div>
+	</div>
+</div>

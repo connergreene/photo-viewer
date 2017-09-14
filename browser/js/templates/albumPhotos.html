@@ -1,0 +1,89 @@
+<div class="photos-header">
+  <div ng-controller="newPhotoModalCntrl">
+      <button class="add-btn" ng-click="showModal = true">
+        <div class="button-text">
+            ADD PHOTO
+        </div> 
+        <span class="glyphicon glyphicon-plus button-symbol"></span>
+      </button>
+      <modal visible="showModal" on-show="modalOneShown()" on-hide="modalOneHide()">
+        <modal-header title="Add Photos"></modal-header>
+        <modal-body>
+            <div ngf-drop ngf-select ng-model="photos" class="drop-box" 
+                ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+                accept="image/*,application/pdf" 
+                ngf-pattern="'image/*,application/pdf'">Drop image here or click to upload</div>
+            <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            <div ng-repeat="p in photos">
+              <img ngf-src="p" ngf-background="p" ngf-resize="{width: 100, height: 100, quality: 0.9}" ngf-no-object-url="true or false">
+              {{p.$error}} {{p.$errorParam}}
+            </div>
+            <button class="modal-button" ng-click="upload(photos)">Upload</button>
+        </modal-body>
+      </modal>
+  </div>
+  <h3>{{ albumTitle }}</h3>
+  <button class="add-btn" ng-click="toggleEditMode()">
+    <div ng-hide="editMode" class="button-text">
+        EDIT PHOTOS
+    </div>
+    <div ng-show="editMode" class="button-text">
+        VIEW PHOTOS
+    </div>
+    <span ng-hide="editMode" class="glyphicon glyphicon-pencil button-symbol"></span>
+    <span ng-show="editMode" class="glyphicon glyphicon-ok edit-check"></span>
+  </button>
+</div>
+<div class="photos-container">
+	<div ng-hide="editMode" lightgallery ng-show="photoFilter(photo, search)" ng-repeat="photo in album" data-sub-html="{{photo.title}}" data-src="{{photo.url}}">
+    <div class="photo-wrap">
+        <img class="photo-thumb" ng-src="{{photo.thumbnailUrl}}" />
+    </div>
+  </div>
+  <div ng-show="editMode" ng-show="photoFilter(photo, search)" ng-repeat="photo in album">
+    <div ng-controller="editPhotoModalCntrl" class="photo-wrap">
+        <img class="edit-photo-thumb" ng-click="toggleShowModal()" ng-src="{{photo.thumbnailUrl}}" />
+        <modal visible="showModal" on-show="modalOneShown()" on-hide="modalOneHide()">
+        <modal-header ng-hide="deleteMode" title="Edit Photo"></modal-header>
+        <modal-body>
+          <a class="btn" ng-hide="deleteMode" ng-click="deleteToggle()">
+            <span class="glyphicon glyphicon-trash delete-photo-btn"></span> 
+          </a>
+          <div class="deleteMode" ng-show="deleteMode">
+            <div class="delete-text">
+              Are you sure you want to delete <strong>{{ photo.title }}</strong>?
+            </div>
+            <div class="modal-yes-no">
+                <button ng-click="deletePhoto(photo); toggleShowModal()" class="modal-button">Yes</button>
+                <button ng-click="deleteToggle()" class="modal-button">No</button>
+            </div>
+          </div>
+          <form ng-hide="deleteMode" ng-submit="submit(newPhoto)" name="photoForm">
+            Title
+            <input type="text" class="form-control input-sm" name="title" ng-model="newPhoto.title" placeholder="{{ photo.title }}"/>
+            Album
+            <div uib-dropdown is-open="status.isopen">
+              <button id="edit-drop-button" type="button" uib-dropdown-toggle ng-disabled="disabled">
+                <div>{{ albumChoice.title }}</div>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <li ng-repeat="album in albums">
+                  <a ng-click="setChoice(album)">{{ album.title }}</a>
+                </li>
+              </ul>
+            </div>
+            <div style="color:red" ng-show="err">
+              {{ err }}
+            </div>
+            <input class="modal-button" type="Submit" value="Submit"/>
+          </form>
+        </modal-body>
+      </modal>
+    </div>
+  </div>
+</div>
+
+
+
+      

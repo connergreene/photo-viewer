@@ -1,0 +1,122 @@
+/*RESIZE AND PHONE*/
+@media screen and (max-width : 760px), screen and (max-device-width : 760px) {
+
+	.logo {
+		text-align: center;
+    	margin-top: 10px;
+    	font-size: 30px;
+	}
+
+	.albums-header h3 {
+		font-size: 35px;
+	}
+
+	.add-btn {
+    	height: 40px;
+    	width: 40px;
+    	margin-top: 10px;
+    	border: none;
+   	}
+
+   	.button-text {
+   		display: none;
+   	}
+
+   	.button-symbol {
+		display: block;
+	}
+
+   	#single-button {
+	    height: 40px;
+	    width: 40px;
+	    margin-top: 10px;
+	    border: none;
+	    font-size: 10px;
+	}
+
+	#single-button .caret{
+		display: none;
+	}
+
+	.dropdown-menu {
+		min-width: 80px;
+    	font-size: 9px;
+	}
+
+	.album-thumb {
+   		height: 210px;
+    	width: 42%;
+	}
+
+	.album-back {
+		height:120px;
+	}
+
+	.album-tools {
+		height: 20px;
+		background: transparent;
+	}
+
+	.album-info {
+		width: 100%;
+    	font-size: 8px;
+    	line-height: 5px;
+    	white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    	position: relative;
+    	bottom: -10px;
+	}
+
+	.album-info p {
+		line-height: 5px;
+	}
+
+	.album-title {
+		margin-top: 5px;
+    	font-size: 12px;
+	}
+
+	.photos-header h3 {
+		font-size: 20px;
+		white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+	}
+
+	.photo-search {
+		float: none;
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.photo-search input {
+		width: 90%;
+		position: relative;
+    	top: -50px;
+    	left: 10px;
+	}
+
+	.navbar .btn {
+	    font-size: 25px;
+	    float: right;
+	    position: relative;
+    	top: -50px;
+    	left: 10px;
+	}
+
+	.photo-thumb {
+		margin: 5px;
+    	width: 45%;
+	}
+
+	.edit-photo-thumb {
+		margin: 5px;
+    	width: 45%;
+	}
+	
+	.edit-check {
+		display: block;
+	}
+
+}

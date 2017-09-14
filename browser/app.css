@@ -1,0 +1,332 @@
+/*HOME PAGE*/
+
+body {
+	background-color: #f0f0f5;
+	background-attachment: fixed;
+	background-image: url("https://www.transparenttextures.com/patterns/light-sketch.png");
+}
+
+.albums-header {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.album-thumb-container {
+	width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.album-thumb {
+	height: 450px;
+    width: 360px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    border-style: outset;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.album-back {
+	height: 300px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-size: 50% 50%;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+	background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+}
+
+.album-thumb:hover .album-back {
+	opacity: 0.8;
+}
+
+.album-tools {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.album-info {
+	text-align: center;
+	color: #000080;
+	font-family: 'Libre Baskerville', serif;
+}
+
+.album-info p {
+	line-height: 20px;
+}
+
+.album-title {
+	font-size: 20px;
+}
+
+#album-form {
+	margin-top: -30px;
+	text-align: right;
+}
+
+#album-form button {
+	background-color : transparent;
+	position: relative;
+    top: -3px;
+}
+
+#album-form button:hover {
+	color: black;
+}
+
+#album-form .form-control {
+	text-align: center;
+    height: 25px;
+    position: relative;
+    top: -7px;
+}
+
+.album-name-form {
+	margin-top: 5px;
+}
+
+.owner-err {
+	text-align: center;
+	white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    top: -5px;
+}
+
+.btn-primary {
+	background-color: #35a0df;
+    border: none;
+}
+
+.btn {
+	color: #35a0df;
+}
+
+h3 {
+	font-size: 65px;
+	text-align: center;
+	color: #000080;
+	font-family: 'Libre Baskerville', serif;
+    max-width: 815px;
+}
+
+.logo {
+	font-size: 45px;
+}
+
+.logo a {
+	color: #35a0df;
+	text-decoration: none;
+	font-family: 'Libre Baskerville', serif;
+}
+
+
+.navbar .container {
+  	background-color: white;
+  	margin-left: -1px;
+  	top: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1;
+}
+
+.navbar .btn {
+	font-size: 30px;
+	float: right;
+}
+
+.add-btn {
+    height: 60px;
+    width: 150px;
+    background-color: #35a0df;
+    color: white;
+    border-radius: 30px;
+}
+
+.button-symbol {
+	display: none;
+}
+
+#single-button {
+	height: 60px;
+    width: 150px;
+    background-color: #35a0df;
+    color: white;
+}
+
+.dropdown-menu {
+	background-color: #35a0df;
+	min-width: 150px;
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+.dropdown-menu li a {
+	color: white;
+	text-align: center;
+}
+
+.modal-header {
+	background-color: #000080;
+    color: white;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    text-align: center;
+}
+
+.modal-backdrop.in {
+	z-index: 0;
+}
+
+.modal-content {
+	margin-top: 50%;
+}
+
+.modal-button {
+	color: white;
+    background-color: #000080;
+    margin-left: 105px;
+    margin-top: 15px;
+}
+
+.delete-text {
+	text-align: center;
+}
+
+.modal-yes-no {
+	display: flex;
+	justify-content: space-around;
+}
+
+.modal-yes-no .modal-button {
+	margin-left: 0px;
+	height: 40px;
+    width: 90px;
+}
+
+/*ALBUM PAGE*/
+.photos-header {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.photo-search {
+	float: right;
+	margin-top: 10px;
+}
+
+.photo-search input {
+	width:  400px;
+    height: 50px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.photo-search input:focus{
+    outline: none;
+}
+
+.photos-container {
+	margin-left: 2%;
+    margin-right: 2%;
+}
+
+.photo-wrap {
+	position: relative;
+}
+
+.photo-wrap .modal-body {
+    top: -20px;
+}
+
+.photo-thumb {
+	float: left;
+	margin: 10px;
+}
+
+.edit-photo-thumb {
+	float: left;
+	margin: 10px;
+	opacity: 0.5;
+}
+
+.edit-photo-thumb:hover {
+    opacity: 1.5;
+}
+
+.edit-check {
+    display: none;
+}
+
+#edit-drop-button {
+    width: 100%;
+    color: white;
+    background-color: #000080;
+    display: flex;
+    justify-content: space-between;
+    border: solid;
+}
+
+#edit-drop-button div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+}
+
+#edit-drop-button .caret {
+    margin-top: 10px;
+    float: right;
+}
+
+.deleteMode {
+    height: 100px;
+    margin-top: 30px;
+}
+
+.delete-photo-btn {
+    color: red;    
+    top: -42px;
+    font-size: 20px;
+}
+
+.photo-wrap .dropdown-menu li a {
+    width: 267px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.photo-wrap .dropdown-menu{
+    background-color: #000080;
+}
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 248px;
+    height: 140px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+
+.dragover {
+    border: 5px dashed blue;
+}
+
+

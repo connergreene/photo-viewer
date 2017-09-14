@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="container">
+		<div class="navbar-header">
+			<div  class="logo">
+				<a ui-sref="home">PhotoViewer</span></a>
+			</div>
+		</div>
+
+		<div ng-hide="isActive('/')" class="photo-search">
+			<input ng-hide="!showSearch" type="text"  value="search" ng-model="search" placeholder="Search Photos">
+			<a class="btn" ng-click="toggleSearch()">
+				<span class="glyphicon glyphicon-search"></span>
+			</a>
+		</div>
+    </div>
+</nav>
